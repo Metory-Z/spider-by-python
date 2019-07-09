@@ -1,5 +1,6 @@
 import re
 import requests
+#need to login
 
 def getHTMLText(url):
 	try:
@@ -13,7 +14,7 @@ def getHTMLText(url):
 def parsePage(ilt, html):
 	try:
 		plt = re.findall(r'\"view_price\"\:\"[d\.]*\"', html)
-		tlt = re.findall(r'\"raw_title\"\:\".*?')
+		tlt = re.findall(r'\"raw_title\"\:\".*?', html)
 		for i in range(len(plt)):
 			price = eval(plt[i].split(';'))
 			title = eval(tlt[i].split(';'))

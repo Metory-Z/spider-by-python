@@ -18,7 +18,7 @@ def getStockList(lst, stockURL):
 	a = soup.find_all('a')
 	for i in a:
 		try:
-			href = i.attrs['href']
+			href = i.attrs['href'] ##
 			lst.append(re.findall(r"[s][hz]\d{6}", href)[0])
 		except:
 			continue
@@ -46,6 +46,7 @@ def getStockInfo(lst, stockURL, fpath):
 
 			with open(fpath, 'a', encoding='utf-8') as f:
 				f.write(str(infoDict) + '\n')
+			f.close()
 		except:
 			traceback.print_exc()
 			continue

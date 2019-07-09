@@ -17,6 +17,7 @@ def fillUnivList(ulist, html):
         if isinstance(tr, bs4.element.Tag):
             tds = tr('td')
             ulist.append([[tds[0].string], [tds[1].string], [tds[3].string]])
+            
 
 def printUnivList(ulist, num):
     tplt = "{0:^10}\t{1:{3}^15}\t{2:^10}" # {3} Fill with the third char in format
